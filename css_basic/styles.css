@@ -1,4 +1,5 @@
 /* Make body a flex container in column direction */
+<:link href="index.html"rel="index.html">
 body {
   display: flex;
   flex-direction: column;
