@@ -1,7 +1,16 @@
-head{
-     color: brown;
-    
+nav {
+     image-rendering: ; color: red;
+     margin: 5px;
+     padding: 10px;
 }
-  h1  {
-      color: rgb(92, 225, 65);
- }    fonts:size 20px
+body {
+     background-color: aqua;
+}
+
+h1 {
+       < margin-inline-end:center ;
+}
+
+header {
+     border-image-width: 0%;
+}    font size 5px;
