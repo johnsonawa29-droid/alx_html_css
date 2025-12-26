@@ -1,16 +1,41 @@
-nav {
-     image-rendering: ; color: red;
-     margin: 5px;
-     padding: 10px;
+
+ body{
+  display: flex;
+  flex-direction: column;
 }
-body {
-     background-color: aqua;
+header{
+  background-color: gray;
 }
 
-h1 {
-       < margin-inline-end:center ;
+
+li{
+ color: white;
+ font-size: larger;
 }
 
-header {
-     border-image-width: 0%;
-}    font size 5px;
+main{
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+
+}
+
+article{
+  flex: 2;
+  overflow-y: auto;
+}
+
+aside{
+  flex: 1;
+  overflow-y: auto;
+}
+ 
+footer{
+  align-items: center;
+  display: flexbox;
+}
+
+section h2 div{
+  border-image-width: 10px;
+
+}
