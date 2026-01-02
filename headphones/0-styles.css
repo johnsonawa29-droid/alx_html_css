@@ -1,90 +1,78 @@
-/* =====================
-   RESET
-===================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =====================
-   VARIABLES
-===================== */
-:root {
-  --main-color: #FF6565;
-  --text-color: #ffffff;
-  --max-width: 1000px;
-  --font-main: 'Source Sans Pro', sans-serif;
-}
-
-/* =====================
-   BASE STYLES
-===================== */
 body {
-  font-family: var(--font-main);
+  font-family: Arial, sans-serif;
 }
 
-a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-ul {
-  list-style: none;
-}
-
-button {
-  border: none;
-  cursor: pointer;
-}
-
-/* =====================
-   LAYOUT
-===================== */
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* =====================
-   HERO
-===================== */
+/* HERO */
 .hero {
-  background: url("images/headphones_hero_1.jpg") no-repeat center/cover;
-  color: var(--text-color);
+  background: url("images/hero.jpg") no-repeat center center/cover;
   min-height: 100vh;
+  color: white;
 }
 
-/* =====================
-   NAVIGATION
-===================== */
-.nav {
+/* NAVBAR */
+.navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
 }
 
+/* LOGO */
 .logo {
-  width: 160px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
+/* NAV LINKS */
 .nav-links {
+  list-style: none;
   display: flex;
   gap: 30px;
 }
 
-.nav-links a:hover,
-.nav-links a:active {
-  color: var(--main-color);
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-/* =====================
-   HERO CONTENT
-===================== */
+.nav-links a:hover {
+  color: #ff6565;
+}
+
+/* HAMBURGER */
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+}
+
+/* HERO CONTENT */
 .hero-content {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-top: 200px;
 }
 
 .hero-content h1 {
@@ -93,59 +81,64 @@ button {
 }
 
 .hero-content p {
-  font-size: 16px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-.hero-text {
-  max-width: 600px;
-  margin: 40px auto 0;
-  line-height: 1.6;
-}
-
-/* =====================
-   BUTTON
-===================== */
-.btn {
-  background-color: var(--main-color);
-  color: var(--text-color);
+/* CTA BUTTON */
+.cta {
+  background: #ff6565;
+  border: none;
   padding: 15px 30px;
-  border-radius: 25px;
-  font-weight: bold;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
-.btn:hover,
-.btn:active {
+.cta:hover {
   opacity: 0.9;
 }
 
-/* =====================
-   MOBILE (≤480px)
-===================== */
-@media (max-width: 480px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hero-content {
-    margin-top: 120px;
-  }
-
-  .hero-content h1 {
-    font-size: 24px;
-  }
-  .hero {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
+/* TEXT UNDER BUTTON */
+.hero-text {
+  max-width: 600px;
+  font-size: 14px;
 }
 
-.hero-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .logo {
+    margin: 0 auto;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: black;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    animation: slideDown 0.3s ease;
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
