@@ -44,8 +44,10 @@ button {
 .hero {
   background: url("images/hero-image.jpg") center/cover no-repeat;
   color: var(--text-color);
+  min-height: 100vh;
 }
 
+/* Container to center content */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -95,12 +97,13 @@ button {
 }
 
 /* =======================
-   MOBILE
+   MOBILE RESPONSIVE
 ======================= */
 @media (max-width: 480px) {
 
   .header {
     flex-direction: column;
+    align-items: center;
   }
 
   .nav {
@@ -113,5 +116,19 @@ button {
 
   .hero-content {
     margin-top: 80px;
+    padding: 0 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content p {
+    font-size: 12px;
+  }
+
+  .hero-text {
+    font-size: 12px;
+    margin-top: 20px;
   }
 }
